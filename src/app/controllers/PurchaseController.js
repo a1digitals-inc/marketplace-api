@@ -13,7 +13,8 @@ class PurchaseController {
       from: '"noreply" <noreply@noreply.com>',
       to: purchaseAd.author.email,
       subject: `Solicitação de compra: ${purchaseAd.title}`,
-      html: `<p>${content}</p>`
+      template: 'purchase',
+      context: { user, content, ad }
     })
 
     return res.send()
